@@ -1,0 +1,29 @@
+spring:
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+  application:
+    name: eureka-server
+  output:
+    ansi:
+      enabled: always
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+      exclude: static/**, public/**
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+
